@@ -15,5 +15,5 @@ export class CalendarComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  
+
 }
