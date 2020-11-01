@@ -1,7 +1,17 @@
-<mat-tab-group color="primary" backgroundColor="primary">
-  <mat-tab label="Month">
+<mat-tab-group 
+  color="primary"
+  (focusChange)='viewSwap($event)'
+  [selectedIndex]='calendarView'
+  backgroundColor="primary">
 
+  <mat-tab label="Month">
+    <mwl-calendar-month-view
+    (dayClicked)='zoomWeek($event)'
+      [viewDate]="viewDate"
+      [events]="schedule">
+    </mwl-calendar-month-view>
   </mat-tab>
+
   <mat-tab label="Week"> 
     <mwl-calendar-week-view
       [daysInWeek]=7
@@ -10,7 +20,10 @@
       [events]='schedule'
     ></mwl-calendar-week-view>
   </mat-tab>
+
   <mat-tab label="day">
 
   </mat-tab>
+
 </mat-tab-group>
+{{ calendarView }}
