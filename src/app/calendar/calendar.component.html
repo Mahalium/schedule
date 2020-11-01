@@ -1,4 +1,16 @@
-<mwl-calendar-week-view
-  [daysInWeek]=7
-  [viewDate]='viewDate'
-></mwl-calendar-week-view>
+<mat-tab-group color="primary" backgroundColor="primary">
+  <mat-tab label="Month">
+
+  </mat-tab>
+  <mat-tab label="Week"> 
+    <mwl-calendar-week-view
+      [daysInWeek]=7
+      [viewDate]='viewDate'
+      [hourSegments]='1'
+      [events]='schedule'
+    ></mwl-calendar-week-view>
+  </mat-tab>
+  <mat-tab label="day">
+
+  </mat-tab>
+</mat-tab-group>
