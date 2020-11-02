@@ -1,6 +1,3 @@
-import { CdkPortal } from '@angular/cdk/portal';
-import { NgIf } from '@angular/common';
-import { mixinColor } from '@angular/material/core';
 import { CalendarEvent } from 'angular-calendar';
 
 export var spoofSchedule: CalendarEvent[] = [
@@ -9,13 +6,6 @@ export var spoofSchedule: CalendarEvent[] = [
     start:  new Date('2020-01-01 07:00:00.000'),
     end:  new Date('2020-01-01 15:00:00.000'),
     title: 'Selector',
-    color: null,
-    actions: null, 
-    allDay: null,
-    cssClass: null,
-    resizable: null,
-    draggable: true,
-    meta: null
   },
   {
     id: 2,
@@ -23,30 +13,63 @@ export var spoofSchedule: CalendarEvent[] = [
     end:  null,
     title: 'Punch In',
     color:  {
-      primary: 'red',
-      secondary: 'red'
+      primary: 'orange',
+      secondary: 'orange'
     },
-    actions: null, 
-    allDay: null,
-    cssClass: null,
-    resizable: null,
-    draggable: true,
-    meta: null
   },
   {
     id: 3,
     start:  new Date('2020-01-01 15:15:00.000'),
-    end:  null,
     title: 'Punch Out',
     color:  {
       primary: 'green',
-      secondary: 'green'
+      secondary: 'orange'
     },
-    actions: null, 
-    allDay: null,
-    cssClass: null,
-    resizable: null,
-    draggable: true,
-    meta: null
+    actions: [
+      {
+        id: 1,
+        label: 'Unaccounted',
+        onClick:e=>{console.log(e)}
+      }
+    ],
   },
-] 
+  {
+    id: 1,
+    start:  new Date('2020-01-02 07:00:00.000'),
+    end:  new Date('2020-01-02 15:00:00.000'),
+    title: 'Selector',
+  },
+  {
+    id: 1,
+    start:  new Date('2020-01-02 07:00:00.000'),
+    end:  new Date('2020-01-02 15:00:00.000'),
+    color: {
+      primary: 'purple',
+      secondary: 'purple'
+    },
+    title: 'Paid Sick',
+  },
+  {
+    id: 1,
+    start:  new Date('2020-01-03 07:00:00.000'),
+    end:  new Date('2020-01-03 15:00:00.000'),
+    title: 'Selector',
+  },
+  {
+    id: 1,
+    start:  new Date('2020-01-03 07:00:00.000'),
+    end:  new Date('2020-01-03 15:00:00.000'),
+    color: {
+      primary: 'red',
+      secondary: 'red'
+    },
+    actions: [
+      {
+        id: 1,
+        label: 'Unaccounted',
+        onClick:e=>{console.log(e)}
+      }
+    ],
+    title: 'Absence',
+  },
+]
