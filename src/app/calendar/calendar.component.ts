@@ -35,7 +35,7 @@ export class CalendarComponent implements OnInit {
     this.calendarView = e.index
 
     switch (this.calendarView) {
-      case calendarViews.DAY:
+      case calendarViews.WEEK:
         this.viewDate = startOfWeek(this.activeDate)
         break;
 
