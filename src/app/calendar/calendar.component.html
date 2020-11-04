@@ -6,9 +6,9 @@
 
   <mat-tab label="Month">
     <mwl-calendar-month-view
-    (dayClicked)='zoomWeek($event)'
+      (dayClicked)='zoomWeek($event)'
       [viewDate]="viewDate"
-      [events]="schedule"
+      [events]='events'
     ></mwl-calendar-month-view>
   </mat-tab>
 
@@ -17,7 +17,7 @@
       [daysInWeek]=7
       [viewDate]='viewDate'
       [hourSegments]='1'
-      [events]='schedule'
+      [events]='events'
     ></mwl-calendar-week-view>
   </mat-tab>
 
