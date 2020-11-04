@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CalendarEvent } from 'angular-calendar';
 import { spoofSchedule, spoofExceptions } from '../../data/schedules';
-import { endOfMonth, startOfWeek, addDays, getDay, addHours, getDate } from 'date-fns'
+import { endOfMonth, startOfWeek, addDays, getDay, addHours } from 'date-fns'
 import { Schedule } from '../models/schedule';
 
 const calendarViews = {
@@ -55,6 +55,10 @@ export class CalendarComponent implements OnInit {
     }
   }
 
+  setViewDate(e) {
+    this.activeDate = e.value
+    this.viewSwap({index: this.calendarView})
+  }
 
   fillSchedule(schedules: Schedule[]) {
     schedules.forEach(s => {

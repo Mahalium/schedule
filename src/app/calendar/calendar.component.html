@@ -1,24 +1,36 @@
-<mat-tab-group 
-  color="primary"
-  (focusChange)='viewSwap($event)'
-  [selectedIndex]='calendarView'
-  backgroundColor="primary">
+<mat-form-field color='' class="example-full-width" appearance="fill">
+  <mat-label>Choose a date</mat-label>
+    <input matInput 
+      [matDatepicker]="picker"
+      [value]="activeDate"
+      (dateInput)="setViewDate($event)" 
+      (dateChange)="setViewDate($event)">
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+<button mat-raised-button (click)="picker.open()">Open</button>
+<div>
+  <mat-tab-group 
+    color="primary"
+    (focusChange)='viewSwap($event)'
+    [selectedIndex]='calendarView'
+    backgroundColor="primary">
 
-  <mat-tab label="Month">
-    <mwl-calendar-month-view
-      (dayClicked)='zoomWeek($event)'
-      [viewDate]="viewDate"
-      [events]='events'
-    ></mwl-calendar-month-view>
-  </mat-tab>
+    <mat-tab label="Month">
+      <mwl-calendar-month-view
+        (dayClicked)='zoomWeek($event)'
+        [viewDate]="viewDate"
+        [events]='events'
+      ></mwl-calendar-month-view>
+    </mat-tab>
 
-  <mat-tab label="Week"> 
-    <mwl-calendar-week-view
-      [daysInWeek]=7
-      [viewDate]='viewDate'
-      [hourSegments]='1'
-      [events]='events'
-    ></mwl-calendar-week-view>
-  </mat-tab>
+    <mat-tab label="Week"> 
+      <mwl-calendar-week-view
+        [daysInWeek]=7
+        [viewDate]='viewDate'
+        [hourSegments]='1'
+        [events]='events'
+      ></mwl-calendar-week-view>
+    </mat-tab>
 
-</mat-tab-group>
+  </mat-tab-group>
+</div>
